@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NewToolChest</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if flash.any? %>
+  <% flash.each do |type, message| %>
+  <%= message %>
+  <% end %>
+<% end %>
+
+
+<%= yield %>
+<%= link_to "Register Account", new_user_path %>
+</body>
+</html>
