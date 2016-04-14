@@ -5,11 +5,12 @@ require 'capybara/rails'
 
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  # fixtures :all
+  include Capybara::DSL
+end
 
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
   def teardown
     reset_session!
   end
-  # Add more helper methods to be used by all tests here...
 end
